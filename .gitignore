@@ -1,0 +1,25 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Local data (keep sample_data.csv for demos)
+data.csv
+data*.csv
+!sample_data.csv
+
+# Streamlit / logs
+.ststreamlit/
+st.log
+st.err
+
+# Secrets
+.env
+.env.*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/settings.json
