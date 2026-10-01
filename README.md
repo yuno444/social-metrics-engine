@@ -1,17 +1,31 @@
-# Instagram Analytics Dashboard
+# Social Metrics Engine: Interactive Analytics Dashboard
 
-A Streamlit dashboard for exploring Instagram post performance: views, engagement, and which watch brands drive the most reach.
+## Overview
 
-Built with **Python**, **Pandas**, and **Plotly**.
+An interactive web application engineered to parse raw CSV exports of social media metrics into actionable business intelligence. This dashboard ingests raw engagement data, normalizes date and string formats, and generates dynamic time-series visualizations to track content performance and audience conversion rates over time.
 
-## Features
+## Key Features
 
-- Load CSV exports (including Excel-style sheets with extra blank rows/columns)
-- **Total Engagement** and **Engagement Rate** per post
-- Split comma-separated **Primary Watch Brands** for per-brand rankings
-- Sidebar filters: date range, time grouping, top-N brands, minimum posts per brand
-- Interactive charts: views & engagement over time, top brands by average views
-- Expandable tables for brand breakdown and post-level data
+- **Automated KPI Generation:** Dynamically computes high-level metrics including Total Views, Average Engagement Rate, and Total Engagement across 31 individual records.
+
+- **Granular Data Filtering:** Implements interactive sidebar controls allowing users to isolate data by custom date ranges (spanning from October 2024 to September 2026), adjust time-series grouping, and toggle minimum post thresholds.
+
+- **Advanced String Parsing:** Utilizes Pandas data manipulation to clean and explode multi-variable data cells. This allows the engine to accurately isolate and calculate metrics for individual brands (such as Rolex, Seiko, and Grand Seiko) even when they are tagged together in a single post.
+
+- **Interactive Data Visualization:** Integrates Plotly to render time-series line charts tracking view and engagement spikes, alongside bar charts ranking the top 10 watch brands by average views.
+
+- **Post-Level Auditing:** Features a sortable, calculated dataframe view to inspect raw metrics and computed engagement rates down to the individual post level, handling single posts with up to 549,583 views and 11,733 total engagements.
+
+## Technical Stack
+
+- **Language:** Python
+- **Data Processing:** Pandas
+- **Frontend/Framework:** Streamlit
+- **Data Visualization:** Plotly
+
+## Business Value
+
+Designed to bridge the gap between raw marketing data and strategic decision-making. By calculating total engagement rates (Likes + Comments + Reposts + Shares + Saves / Views) and breaking down performance by specific product categories (e.g., Grand Seiko achieving a 5.36% engagement rate versus Rolex at 2.99%), this tool identifies the exact variables that drive algorithmic reach and user conversion.
 
 ## Quick start
 
@@ -51,9 +65,8 @@ README.md
 
 ## Tips
 
-- **Sparse posting:** Use **Month** grouping in the sidebar for clearer trends.
+- **Sparse Posts:** Use **Month** grouping in the sidebar for clearer trends.
 - **Viral posts:** Turn on **Log scale** when one post dominates the chart.
-- **Brand names:** Inconsistent labels (e.g. `Patek` vs `Patek Philippe`) appear as separate brands until you normalize them in the CSV.
 
 ## License
 
